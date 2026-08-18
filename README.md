@@ -1,5 +1,115 @@
-# Vue 3 + TypeScript + Vite
+# 📊 Belajar Vue.js
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Repository untuk mempelajari dasar-dasar **Vue.js** menggunakan **Vite**, **TypeScript**, dan konsep component-based development.
 
-Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+Project latihan yang dibuat adalah **Crypto Dashboard** untuk memahami bagaimana Vue.js digunakan untuk membangun antarmuka dashboard yang modular dan interaktif.
+
+## 🚀 Tech Stack
+
+* Vue.js
+* TypeScript
+* Vite
+* CSS
+* Component-based Architecture
+
+## 📁 Struktur Project
+
+```text
+belajar-vue/
+├── public/
+├── src/
+│   ├── assets/
+│   │   ├── images/
+│   │   └── styles/
+│   │       └── main.css
+│   │
+│   ├── components/
+│   │   ├── Navbar.vue
+│   │   ├── Sidebar.vue
+│   │   ├── StatCard.vue
+│   │   ├── CryptoCard.vue
+│   │   ├── MarketChart.vue
+│   │   ├── CryptoTable.vue
+│   │   └── Loading.vue
+│   │
+│   ├── data/
+│   │   └── crypto.ts
+│   │
+│   ├── types/
+│   │   └── crypto.ts
+│   │
+│   ├── views/
+│   │   └── Dashboard.vue
+│   │
+│   ├── App.vue
+│   └── main.ts
+│
+├── index.html
+├── package.json
+├── tsconfig.json
+└── vite.config.ts
+```
+
+## 🎯 Tujuan Belajar
+
+Project ini digunakan untuk mempelajari:
+
+* Struktur project Vue.js
+* Single File Components (`.vue`)
+* Props dan Events
+* Reactive State
+* `ref()` dan `computed()`
+* Conditional Rendering
+* List Rendering
+* Component Composition
+* TypeScript pada Vue.js
+* Pengelolaan data
+* Pemisahan `components`, `views`, `data`, dan `types`
+
+## 🛠️ Menjalankan Project
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Jalankan development server:
+
+```bash
+npm run dev
+```
+
+Build untuk production:
+
+```bash
+npm run build
+```
+
+Preview hasil production:
+
+```bash
+npm run preview
+```
+
+## 📌 Project
+
+### Crypto Dashboard
+
+Dashboard sederhana untuk menampilkan informasi cryptocurrency seperti:
+
+* Total Market Cap
+* Market Volume
+* Trending Crypto
+* Harga cryptocurrency
+* Perubahan harga
+* Market chart
+* Crypto market table
+
+Project ini akan dikembangkan secara bertahap seiring proses belajar Vue.js.
+
+---
+
+**Status:** 🚧 In Development
+
+**Purpose:** Learning & Practice
