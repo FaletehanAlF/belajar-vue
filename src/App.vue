@@ -1,21 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const count = ref(0)
+const message = ref('Belum ada aksi')
 
-const tambah = () => {
-  count.value++
+const klikTombol = () => {
+  message.value = 'Tombol berhasil diklik!'
 }
 </script>
 
 <template>
   <div>
-    <h1>Belajar ref()</h1>
+    <h1>Belajar Event Handling</h1>
 
-    <p>Nilai: {{ count }}</p>
+    <p>{{ message }}</p>
 
-    <button @click="tambah">
-      Tambah
+    <button @click="klikTombol">
+      Klik Saya
     </button>
   </div>
 </template>
