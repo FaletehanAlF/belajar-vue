@@ -1,21 +1,34 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const message = ref('Belum ada aksi')
+const imageUrl = ref('https://picsum.photos/300/200')
+const imageAlt = ref('Gambar random')
 
-const klikTombol = () => {
-  message.value = 'Tombol berhasil diklik!'
+const ubahGambar = () => {
+  imageUrl.value = 'https://picsum.photos/400/250'
 }
+
+const website = ref('https://github.com')
+
 </script>
 
 <template>
   <div>
-    <h1>Belajar Event Handling</h1>
+    <h1>Belajar v-bind</h1>
 
-    <p>{{ message }}</p>
+    <img
+      :src="imageUrl"
+      :alt="imageAlt"
+    >
 
-    <button @click="klikTombol">
-      Klik Saya
+    <br><br>
+
+    <button @click="ubahGambar">
+      Ubah Gambar
     </button>
   </div>
+
+  <a :href="website" target="_blank">
+  Buka GitHub
+</a>
 </template>
