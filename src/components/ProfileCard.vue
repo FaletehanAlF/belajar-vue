@@ -1,7 +1,15 @@
+<script setup lang="ts">
+defineProps<{
+  name: string
+  role: string
+  skill: string
+}>()
+</script>
+
 <template>
   <div>
-    <h2>Faletehan Al Farabi</h2>
-    <p>Pelajar RPL</p>
-    <p>Belajar Vue.js</p>
+    <h2>{{ name }}</h2>
+    <p>{{ role }}</p>
+    <p>Skill: {{ skill }}</p>
   </div>
 </template>
