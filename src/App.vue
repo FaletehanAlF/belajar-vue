@@ -1,26 +1,48 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 
-const name = ref('')
+const firstName = ref('')
+const lastName = ref('')
+
+const fullName = computed(() => {
+  return `${firstName.value} ${lastName.value}`.trim()
+})
 </script>
 
 <template>
   <div>
-    <h1>Belajar v-model</h1>
+    <h1>Belajar Computed</h1>
 
-    <label for="name">
-      Nama:
-    </label>
+    <div>
+      <label for="firstName">
+        Nama Depan:
+      </label>
 
-    <input
-      id="name"
-      v-model="name"
-      type="text"
-      placeholder="Masukkan nama"
-    >
+      <input
+        id="firstName"
+        v-model="firstName"
+        type="text"
+        placeholder="Nama depan"
+      >
+    </div>
 
-    <p>
-      Halo, {{ name || 'Guest' }}!
-    </p>
+    <br>
+
+    <div>
+      <label for="lastName">
+        Nama Belakang:
+      </label>
+
+      <input
+        id="lastName"
+        v-model="lastName"
+        type="text"
+        placeholder="Nama belakang"
+      >
+    </div>
+
+    <h2>
+      Nama Lengkap: {{ fullName }}
+    </h2>
   </div>
 </template>
