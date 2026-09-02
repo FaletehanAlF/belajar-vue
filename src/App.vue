@@ -1,34 +1,37 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const imageUrl = ref('https://picsum.photos/300/200')
-const imageAlt = ref('Gambar random')
+const isLoggedIn = ref(false)
 
-const ubahGambar = () => {
-  imageUrl.value = 'https://picsum.photos/400/250'
+const login = () => {
+  isLoggedIn.value = true
 }
 
-const website = ref('https://github.com')
-
+const logout = () => {
+  isLoggedIn.value = false
+}
 </script>
 
 <template>
   <div>
-    <h1>Belajar v-bind</h1>
+    <h1>Belajar v-if & v-else</h1>
 
-    <img
-      :src="imageUrl"
-      :alt="imageAlt"
-    >
+    <div v-if="isLoggedIn">
+      <h2>Selamat datang! 👋</h2>
+      <p>Kamu sudah login.</p>
 
-    <br><br>
+      <button @click="logout">
+        Logout
+      </button>
+    </div>
 
-    <button @click="ubahGambar">
-      Ubah Gambar
-    </button>
+    <div v-else>
+      <h2>Silakan login</h2>
+      <p>Kamu belum login.</p>
+
+      <button @click="login">
+        Login
+      </button>
+    </div>
   </div>
-
-  <a :href="website" target="_blank">
-  Buka GitHub
-</a>
 </template>
