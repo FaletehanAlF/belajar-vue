@@ -1,23 +1,26 @@
 <script setup lang="ts">
-const fruits = [
-  'Apel',
-  'Pisang',
-  'Jeruk',
-  'Mangga',
-  'Anggur'
-]
+import { ref } from 'vue'
+
+const name = ref('')
 </script>
 
 <template>
   <div>
-    <h1>Belajar v-for</h1>
+    <h1>Belajar v-model</h1>
 
-    <h2>Daftar Buah</h2>
+    <label for="name">
+      Nama:
+    </label>
 
-    <ul>
-      <li v-for="fruit in fruits" :key="fruit">
-        {{ fruit }}
-      </li>
-    </ul>
+    <input
+      id="name"
+      v-model="name"
+      type="text"
+      placeholder="Masukkan nama"
+    >
+
+    <p>
+      Halo, {{ name || 'Guest' }}!
+    </p>
   </div>
 </template>
