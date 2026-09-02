@@ -1,48 +1,35 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, watch } from 'vue'
 
-const firstName = ref('')
-const lastName = ref('')
+const name = ref('')
+const message = ref('Nama belum diisi')
 
-const fullName = computed(() => {
-  return `${firstName.value} ${lastName.value}`.trim()
+watch(name, (newName) => {
+  if (newName === '') {
+    message.value = 'Nama belum diisi'
+  } else {
+    message.value = `Nama berubah menjadi: ${newName}`
+  }
 })
 </script>
 
 <template>
   <div>
-    <h1>Belajar Computed</h1>
+    <h1>Belajar watch()</h1>
 
-    <div>
-      <label for="firstName">
-        Nama Depan:
-      </label>
+    <label for="name">
+      Nama:
+    </label>
 
-      <input
-        id="firstName"
-        v-model="firstName"
-        type="text"
-        placeholder="Nama depan"
-      >
-    </div>
+    <input
+      id="name"
+      v-model="name"
+      type="text"
+      placeholder="Masukkan nama"
+    >
 
-    <br>
-
-    <div>
-      <label for="lastName">
-        Nama Belakang:
-      </label>
-
-      <input
-        id="lastName"
-        v-model="lastName"
-        type="text"
-        placeholder="Nama belakang"
-      >
-    </div>
-
-    <h2>
-      Nama Lengkap: {{ fullName }}
-    </h2>
+    <p>
+      {{ message }}
+    </p>
   </div>
 </template>
